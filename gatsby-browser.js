@@ -3,9 +3,9 @@ import { AnimatingProvider, LoadingProvider, MenuProvider } from "./src/hooks"
 import "./src/styles/global.css"
 
 export const wrapRootElement = ({ element }) => (
-  <AnimatingProvider>
-    <LoadingProvider>
+  <LoadingProvider>
+    <AnimatingProvider>
       <MenuProvider>{element}</MenuProvider>
-    </LoadingProvider>
-  </AnimatingProvider>
+    </AnimatingProvider>
+  </LoadingProvider>
 )
