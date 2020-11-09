@@ -49,4 +49,9 @@ table {
 
 html{
   font-size: 62.5%;
+  cursor: none !important;
+}
+
+.link{
+	cursor: pointer;
 }

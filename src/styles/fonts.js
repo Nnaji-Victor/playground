@@ -7,7 +7,7 @@ import CircularBold from '@fonts/Circular/CircularSpotifyBold.woff2'
 
 const FontFaces = css`
     @font-face{
-        font-family:CircularLight;
+        font-family:Circular;
         font-weight:300;
         font-style:normal;
         font-display:swap;
@@ -15,7 +15,7 @@ const FontFaces = css`
         url(${CircularLight}) format("woff")
     }
     @font-face{
-        font-family:CircularRegular;
+        font-family:Circular;
         font-weight:400;
         font-style:normal;
         font-display:swap;
@@ -23,7 +23,7 @@ const FontFaces = css`
         url(${CircularRegular}) format("woff")
     }
     @font-face{
-        font-family:CircularBold;
+        font-family:Circular;
         font-weight:700;
         font-style:normal;
         font-display:swap;
@@ -31,7 +31,7 @@ const FontFaces = css`
         url(${CircularBold}) format("woff")
     }
     @font-face{
-        font-family:CircularBlack;
+        font-family:Circular;
         font-weight:900;
         font-style:normal;
         font-display:swap;

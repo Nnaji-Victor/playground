@@ -1,18 +1,29 @@
 import React from "react"
 import styled from "styled-components"
-// import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { theme } from "@styles"
+import { AnimatingProvider, LoadingProvider } from "../hooks"
+import Hero from "../sections/Hero"
+import { MenuProvider } from "../hooks"
 
-const IndexPage = () => {
+const IndexPage = ({location}) => {
+
   return (
-    <Layout>
+    <>
       <SEO title="Home" />
-      <StyledHome>
-        
-      </StyledHome>
-    </Layout>
+        <AnimatingProvider>
+          <LoadingProvider>
+            <MenuProvider>
+              <Layout location={location}>
+                <StyledHome>
+                  <Hero />
+                </StyledHome>
+              </Layout>
+            </MenuProvider>
+          </LoadingProvider>
+        </AnimatingProvider>
+    </>
   )
 }
 

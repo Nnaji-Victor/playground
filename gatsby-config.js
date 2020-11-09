@@ -35,6 +35,7 @@ module.exports = {
         alias: {
           '@fonts': path.resolve(__dirname, 'src/fonts'),
           '@styles': path.resolve(__dirname, 'src/styles'),
+          '@hooks': path.resolve(__dirname, 'src/hooks'),
         },
         extensions: []
       }

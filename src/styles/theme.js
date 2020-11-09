@@ -1,6 +1,6 @@
 const theme = {
     fonts: {
-        Circular: "CircularSpotifyText, -apple-system, BlinkMacSystemFont, sans-serif"
+        Circular: "Circular,-apple-system, BlinkMacSystemFont, sans-serif"
     }
 };
 

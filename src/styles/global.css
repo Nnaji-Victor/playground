@@ -9,4 +9,31 @@
     --color-factory-yellow: #ffe818;
     --color-black: #171313;
     --color-white: #fff;
+    --color-item-alt: #494d54;
 }
+
+body{
+    background-color: var(--color-storm);
+    cursor: none;
+}
+
+.decolines {
+	pointer-events: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+}
+
+.decolines--fixed {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+}
+
+.decoline {
+	position: absolute;
+}
+
