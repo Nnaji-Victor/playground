@@ -7,8 +7,13 @@ const PageLoading = () => {
     const [,setLoading] = useLoader();
     
     useEffect(() => {
+        setLoading(true);
         const mask = ".js-mask";
         const slices = gsap.utils.toArray(".js-mask__slice");
+        gsap.set(".overall", {
+          css: {backgroundColor: "#93b4c2"},
+          duration: 0.2,
+        })
 
         const tl = gsap.timeline({
             onComplete: () => {
@@ -31,7 +36,7 @@ const PageLoading = () => {
     })
     }, [setLoading])
     return (
-        <StyledPageLoader>
+        <StyledPageLoader className="overall">
             <div className="mask js-mask">
                 <div className="mask__slice js-mask__slice"></div>
                 <div className="mask__slice js-mask__slice"></div>
@@ -61,7 +66,6 @@ const StyledPageLoader = styled.div`
   .mask__slice {
     -webkit-box-flex: 1;
     flex: 1;
-    background-color: #3171c0;
     background-color: #93b4c2;
   }
 `;

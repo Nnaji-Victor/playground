@@ -8,6 +8,7 @@ const Loading = () => {
     const [,setLoading] = useLoader();
 
     useEffect(() => {
+      setLoading(true);
        const mask = ".js-mask";
        const slices = gsap.utils.toArray(".js-mask__slice");
        const lines = gsap.utils.toArray(".js-mask-line");

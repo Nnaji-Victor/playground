@@ -24,8 +24,12 @@ const Layout = ({ children, location }) => {
   //   }
   // `)
 
-  const isHome = location?.pathname === '/';
-  const [isLoading] = useLoader();
+  const isHome = location.pathname === '/';
+  const [isLoading, setLoading] = useLoader();
+  React.useEffect(() => {
+    setLoading(true);
+  }, [setLoading])
+
   return (
     <>
       {isLoading && isHome ? (
