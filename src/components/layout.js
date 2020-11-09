@@ -24,7 +24,7 @@ const Layout = ({ children, location }) => {
   //   }
   // `)
 
-  const isHome = location.pathname === '/';
+  const isHome = location?.pathname === '/';
   const [isLoading] = useLoader();
   return (
     <>
