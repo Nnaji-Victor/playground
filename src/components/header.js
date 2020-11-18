@@ -204,7 +204,7 @@ const StyledLogo = styled(Link)`
   .logo{
     width: 20rem;
     opacity: 0;
-    visibility: none;
+    visibility: hidden;
     ${media.phone` width: 15rem`}
   }
 `;

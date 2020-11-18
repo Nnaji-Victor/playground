@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import logo from "../images/logo.svg";
 import { gsap } from "gsap"
 import { useLoader } from '@hooks';
+import { media } from '../styles';
 
 const Loading = () => {
     const [,setLoading] = useLoader();
@@ -19,6 +20,7 @@ const Loading = () => {
             setLoading(false);
           }
        })
+       .set(logo, {css: {display: 'block'}})
 
        tl
        .set(mask, {autoAlpha: 1})
@@ -155,10 +157,14 @@ const StyledLoading = styled.div`
   }
   .logo--mask img {
     width: 100%;
+    width: 30vw;
     height: auto;
+    ${media.tablet`width: 35vw`};
+    ${media.phone`width: 45vw`};
     margin: 0 auto;
     visibility: hidden;
     opacity: 0;
+    display: none;
   }
 `
 

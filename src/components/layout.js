@@ -1,6 +1,5 @@
 import React from "react"
 import PropTypes from "prop-types"
-// import { useStaticQuery, graphql } from "gatsby"
 import "./layout.css"
 import styled from "styled-components"
 import { useLoader } from "../hooks"
@@ -14,20 +13,12 @@ import Menu from "./Menu"
 import PageLoading from "./PageLoading"
 
 const Layout = ({ children, location }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
 
   const isHome = location.pathname === '/';
   const [isLoading, setLoading] = useLoader();
   React.useEffect(() => {
-    setLoading(true);
+    // TODO change to true
+    setLoading(false);
   }, [setLoading])
 
   return (

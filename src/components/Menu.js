@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Link} from 'gatsby';
+import {Link, graphql,  useStaticQuery} from 'gatsby';
 import { media, mixins} from '../styles';
 import Social from './Social';
 import portrait from '../images/portrait.jpg';
@@ -8,6 +8,7 @@ import roadmap from '../images/roadmap.svg';
 import arrow from '../images/arrow-right.svg';
 import { useAnimating, useMenu } from '../hooks';
 import gsap from 'gsap';
+// import useWPMenu from '../hooks/useWPMenu';
 
 const Menu = () => {
   function handleMouseleave(el) {
@@ -22,6 +23,47 @@ const Menu = () => {
   const menuRef = React.useRef(null);
   const [, setAnimating] = useAnimating();
 
+
+const data = useStaticQuery(graphql`
+{
+  main: wordpress {
+    menu(id: "dGVybToz") {
+      menuItems {
+        edges {
+          node {
+            label
+            path
+          }
+        }
+      }
+    }
+  }
+
+  secondary: wordpress {
+    menus(where: {slug: "secondary-menu"}) {
+      nodes {
+        menuItems {
+          nodes {
+            childItems {
+              edges {
+                node {
+                  label
+                  url
+                }
+              }
+            }
+            label
+          }
+        }
+      }
+    }
+  }
+
+}
+`)
+
+  const secondary = data.secondary.menus.nodes[0].menuItems.nodes;
+  const main = data.main.menu.menuItems.edges;
 
   React.useEffect(() => {
     if(open){
@@ -143,38 +185,18 @@ const Menu = () => {
     }
   },[open, setAnimating])
 
-   
-
     return (
       <StyledMenu className={`menu`} ref={menuRef}>
         <div className="menu__item menu__item--1" data-direction="bt">
           <div className="menu__item-inner">
             <div className="mainmenu">
-              <div className="mainlink__inner">
-                <Link to="#" className="mainmenu__item link">
-                  Gsap
-                </Link>
+              {main.map((mainmenu, i) => (
+                <div className="mainlink__inner" key={i}>
+                  <Link to={mainmenu.node.path} className="mainmenu__item link">
+                    {mainmenu.node.label}
+                  </Link>
               </div>
-              <div className="mainlink__inner">
-                <Link to="#" className="mainmenu__item link">
-                  AnimeJs
-                </Link>
-              </div>
-              <div className="mainlink__inner">
-                <Link to="#" className="mainmenu__item link">
-                  ThreeJs
-                </Link>
-              </div>
-              <div className="mainlink__inner">
-                <Link to="#" className="mainmenu__item link">
-                  WebGL
-                </Link>
-              </div>
-              <div className="mainlink__inner">
-                <Link to="#" className="mainmenu__item link">
-                  Others
-                </Link>
-              </div>
+              ))}
             </div>
             <p className="label label--topleft label--vert-mirror">
               Animate the hell outta anything
@@ -208,67 +230,32 @@ const Menu = () => {
         >
           <div className="menu__item-inner">
             <div className="menu__item--3-content">
-              <div className="mainlink__inner">
-                <div className="sidemenu__item-heading js-sidemenu">
-                  Look Book
-                </div>
-              </div>
-              <div className="sidemenu-main-content">
-                <div className="mainlink__inner">
-                  <Link to="#" className="sidemenu__item-content js-sidemenu">
-                    Articles
-                  </Link>
-                </div>
-
-                <div className="mainlink__inner">
-                  <Link to="#" className="sidemenu__item-content js-sidemenu">
-                    Awards
-                  </Link>
-                </div>
-
-                <div className="mainlink__inner">
-                  <Link to="#" className="sidemenu__item-content js-sidemenu">
-                    Case Studies
-                  </Link>
-                </div>
-
-                <div className="mainlink__inner">
-                  <Link to="#" className="sidemenu__item-content js-sidemenu">
-                    Reviews
-                  </Link>
-                </div>
-              </div>
-              <div className="sidemenu__item-content">...</div>
-
-              <div className="mainlink__inner">
-                <div className="sidemenu__item-heading js-sidemenu">Site</div>
-              </div>
-
-              <div className="sidemenu-main-content">
-                <div className="mainlink__inner">
-                  <Link to="#" className="sidemenu__item-content js-sidemenu">
-                    Site Policy
-                  </Link>
-                </div>
-
-                <div className="mainlink__inner">
-                  <Link to="#" className="sidemenu__item-content js-sidemenu">
-                    Sitemap
-                  </Link>
-                </div>
-
-                <div className="mainlink__inner">
-                  <Link to="#" className="sidemenu__item-content js-sidemenu">
-                    Privacy Policy
-                  </Link>
-                </div>
-
-                <div className="mainlink__inner">
-                  <Link to="#" className="sidemenu__item-content js-sidemenu">
-                    Teams
-                  </Link>
-                </div>
-              </div>
+            {
+                secondary.map((sm, i) => {
+                  if(sm.childItems.edges.length > 0){
+                    return (
+                      <div key={i}>
+                        <div className="mainlink__inner">
+                        <div className="sidemenu__item-heading js-sidemenu">
+                          {sm.label}
+                        </div>
+                       </div>
+                       <div className="sidemenu-main-content">
+                          {sm.childItems.edges.map((smLink, j) => (
+                            <div className="mainlink__inner" key={j}>
+                                <Link to={smLink.node.url} className="sidemenu__item-content js-sidemenu">
+                                  {smLink.node.label}
+                                </Link>
+                            </div>
+                          ))}
+                       </div>
+                       <div className="sidemenu__item-content">...</div>
+                       </div>
+                    )
+                  }
+                })
+              }
+              
             </div>
           </div>
         </div>
@@ -302,7 +289,8 @@ const Menu = () => {
         </div>
       </StyledMenu>
     )
-}
+};
+
 
 const StyledMenu = styled.div`
   &.menu--open {

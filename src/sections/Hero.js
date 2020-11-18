@@ -1,18 +1,19 @@
-import { Link } from 'gatsby';
+// import { Link } from 'gatsby';
 import React from 'react'
 import styled from 'styled-components';
+import { mixins } from '../styles';
 
 const Hero = () => {
     return (
         <StyledHero>
-           hello
-           <Link to="/page-2">page2</Link>
+           
         </StyledHero>
     )
 }
 
 const StyledHero = styled.section`
-   
+    ${mixins.container};
+    margin-top: 80px;
 `;
 
 export default Hero
