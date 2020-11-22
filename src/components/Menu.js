@@ -346,26 +346,26 @@ const StyledMenu = styled.div`
   }
 
   .menu__item--1 .menu__item-inner {
-    background: var(--color-tangerine);
+    background: var(--tertiary-color);
     height: 100%;
   }
   .menu__item--2 .menu__item-inner {
-    background: var(--color-black);
+    background: var(tertiary-color);
     color: #fff;
     height: 100%;
   }
   .menu__item--3 .menu__item-inner {
-    background: var(--color-azure);
+    background: var(--prism-bg);
     height: 100%;
+    color: #000;
   }
   .menu__item--4 .menu__item-inner {
-    background: var(--color-black);
-    background: #1d2027;
+    background: var(--tertiary-color);
     height: 100%;
     color: #fff;
   }
   .menu__item--5 .menu__item-inner {
-    background: var(--color-factory-yellow);
+    background: var(--prism-bg);
     height: 100%;
   }
 
@@ -422,9 +422,7 @@ const StyledMenu = styled.div`
     padding: 0 0.5rem;
     position: relative;
     transition: color 0.3s;
-    /* ${media.phablet`opacity: 1;`} */
     color: var(--color-white);
-    /* opacity: 0.8; */
   }
 
   .mainmenu__item {
@@ -446,7 +444,7 @@ const StyledMenu = styled.div`
   }
 
   .mainmenu__item:hover {
-    color: var(--color-item-alt);
+    color: var(--link-color);
   }
 
   .mainmenu__item::before {
@@ -502,7 +500,7 @@ const StyledMenu = styled.div`
       font-size: 2rem;
       position: relative;
       text-decoration: none;
-      color: #fff;
+      color: var(--heading-color);
       margin-bottom: 3.5rem;
       font-weight: 500;
       display: inline-block;
@@ -515,7 +513,7 @@ const StyledMenu = styled.div`
     .sidemenu__item-content {
       display: block;
       text-decoration: none;
-      color: #fff;
+      color: var(--primary-color);
       font-size: 1.5rem;
       margin-bottom: 15px;
       opacity: 0.7;
@@ -523,6 +521,7 @@ const StyledMenu = styled.div`
 
       &:hover {
         opacity: 1;
+        color: var(--link-color);
       }
     }
 
@@ -622,7 +621,7 @@ const StyledImageBg = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    background-image: ${props => `linear-gradient(to bottom, rgba(164, 201, 216, 0.52), rgba(0, 0, 0, 0.73)), url(${props.bg})`};
+    background-image: ${props => `linear-gradient(to bottom, rgba(100, 255, 218, 0.52), rgba(100, 255, 218, 0.73)), url(${props.bg})`};
     background-repeat: no-repeat;
     background-size: cover;
     transition: transform 0.8s cubic-bezier(0.2, 1, 0.8, 1);

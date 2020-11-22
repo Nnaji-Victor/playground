@@ -103,7 +103,7 @@ const Nav = styled.nav`
         left: 50%;
         width: 100%;
         height: 3px;
-        background: var(--color-black);
+        background: var(--link-color);
         z-index: 0;
         transform: rotate(0deg);
         transition: .25s ease-in-out;
@@ -131,12 +131,12 @@ const Nav = styled.nav`
         }
         &:before {
           z-index: 1;
-          background: var(--color-black);
+          background: var(--link-color);;
           transition: all 0.15s linear 0s;
         }
         &:after {
           z-index: 2;
-          background: var(--color-storm);
+          background: var(--bg);
           transition: all 0.15s linear 0.3s;
         }
         &:nth-child(2):before {

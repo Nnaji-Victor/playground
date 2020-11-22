@@ -122,6 +122,7 @@ const StyledLoading = styled.div`
     flex: 1;
     background-color: #3171c0;
     background-color: #93b4c2;
+    background-color: var(--tertiary-color);
   }
   .mask__inner {
     position: absolute;
@@ -148,7 +149,7 @@ const StyledLoading = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--color-black);
+    background-color: var(--link-color);
     -webkit-transform-origin: left;
     transform-origin: left;
   }

@@ -48,7 +48,7 @@ const StyledLink = styled.a`
     font-size: 2rem;
     font-weight: 700;
     text-transform: uppercase;
-    color: var(--color-black);
+    color: var(--primary-color);
     text-decoration: none;
     &:hover{
         color: var(--color-azure);

@@ -4,8 +4,7 @@ const LoadContext = React.createContext();
 LoadContext.displayName = "LoadContext";
 
 const LoadingProvider = (props) => {
-    // TODO change to true
-    const [isLoading, setIsLoading] = React.useState(false);
+    const [isLoading, setIsLoading] = React.useState(true);
     const value = [isLoading, setIsLoading];
 
     return (

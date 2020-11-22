@@ -17,8 +17,7 @@ const Layout = ({ children, location }) => {
   const isHome = location.pathname === '/';
   const [isLoading, setLoading] = useLoader();
   React.useEffect(() => {
-    // TODO change to true
-    setLoading(false);
+    setLoading(true);
   }, [setLoading])
 
   return (
