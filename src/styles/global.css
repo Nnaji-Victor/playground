@@ -1,5 +1,5 @@
 :root {
-    --color-azure: #64ffda;
+    /* --color-azure: #64ffda;
     --color-storm: #a4c9d8;
     --color-storm: #0a192f;
     --color-tangerine: #ff4935;
@@ -8,15 +8,17 @@
     --color-pink: #ffd0d5;
     --color-salmon: #fb7ea8;
     --color-factory-yellow: #ffe818;
-    --color-black: #171313;
     --color-white: #fff;
-    --color-item-alt: #494d54;
+    --color-item-alt: #494d54; */
 
     --bg: #0a192f;
+    --color-black: #171313;
+    --color-item-alt: #494d54;
     --primary-color: #ccd6f6;
     --heading-color: #e6f1ff;
     --link-color: #64ffda;
     --tertiary-color: #172a45;
+    --tertiary-color: #112340;
     --prism-bg: #020c1b;
 }
 

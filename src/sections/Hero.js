@@ -112,7 +112,7 @@ const HeroContentContainer = styled.div`
           transform: scale(1);
           width: 5px;
           height: 5px;
-          background: var(--color-azure);
+          background: var(--link-color);
           opacity: 0.9;
           border-radius: 50%;
           transition: 0.7s cubic-bezier(.2,1.3,.6,3);;
@@ -146,7 +146,7 @@ const StyledHeroTexts = styled.div`
     color: var(--heading-color);
 
     span{
-        color: var(--color-azure);
+        color: var(--link-color);
     }
 
 `;

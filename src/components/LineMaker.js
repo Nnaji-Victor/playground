@@ -97,7 +97,7 @@ const Line = styled.div`
     &--outer {
       width: 50px;
       height: 50px;
-      border: 1px solid var(--color-white);
+      border: 1px solid var(--primary-color);
       z-index: 12000;
       opacity: 0.5;
 
@@ -117,7 +117,7 @@ const Line = styled.div`
       left: -2.5px;
       top: -2.5px;
       z-index: 11000;
-      background: var(--color-white);
+      background: var(--primary-color);
 
       &.active {
         opacity: 0.5;

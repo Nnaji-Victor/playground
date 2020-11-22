@@ -162,7 +162,7 @@ const data = useStaticQuery(graphql`
           y: 1,
           startAt: action === 'open' ? {y: '50%', opacity: 0} : null,
           ease: action === 'open' ? "Power4.easeOut" : "Power4.easeInOut",
-          stagger: action === 'open' ? 0.15 : 0.2,
+          stagger: action === 'open' ? 0.15 : 0.1,
           opacity: action === 'open' ? 1 : 0,
         },  action === 'open' ? 0.12 : -0.1)
         .to(sidemenulinks, {
@@ -422,7 +422,7 @@ const StyledMenu = styled.div`
     padding: 0 0.5rem;
     position: relative;
     transition: color 0.3s;
-    color: var(--color-white);
+    color: var(--primary-color);
   }
 
   .mainmenu__item {
@@ -573,7 +573,7 @@ const StyledMenu = styled.div`
 
     .label {
       display: block;
-      color: var(--color-white);
+      color: var(--primary-color);
       position: absolute;
       z-index: 1000;
       font-size: 1.25rem;
@@ -672,7 +672,7 @@ const StyledRoadMap = styled.div`
 
 const StyledRoadMapText = styled(Link)`
   font-size: 2.5rem;
-  color: var(--color-white);
+  color: var(--primary-color);
   text-transform: uppercase;
   letter-spacing: 0.1vw;
   position: relative;
@@ -686,7 +686,7 @@ const StyledRoadMapText = styled(Link)`
     display: block;
     content: '';
     height: 2px;
-    background-color: var(--color-white);
+    background-color: var(--primary-color);
     position: absolute;
     bottom: 0;
     width: 100%;

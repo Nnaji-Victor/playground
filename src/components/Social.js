@@ -12,9 +12,10 @@ const Social = () => {
             // startAt: {y: '50%', opacity: 0},
             ease:  "Power4.easeOut" ,
             duration: 0.15,
+            stagger: 0.15,
             opacity: 1,
           },  0.12)
-    }, )
+    }, [])
     return (
         <StyledList>
            {socialMedia &&
@@ -51,7 +52,7 @@ const StyledLink = styled.a`
     color: var(--primary-color);
     text-decoration: none;
     &:hover{
-        color: var(--color-azure);
+        color: var(--link-color);
         /* opacity: 0.4; */
     }
 
